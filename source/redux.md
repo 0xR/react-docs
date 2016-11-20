@@ -36,8 +36,10 @@ const store = createStore(
   )
 );
 
+client.setStore(store);
+
 ReactDOM.render(
-  <ApolloProvider store={store} client={client}>
+  <ApolloProvider client={client}>
     <MyRootComponent />
   </ApolloProvider>,
   rootEl
