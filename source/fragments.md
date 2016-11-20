@@ -35,7 +35,7 @@ To do so, we can simply share a fragment describing the fields we need for a com
 import gql from 'graphql-tag';
 
 CommentsPage.fragments = {
-  comment: gql`
+  comment: `
     fragment CommentsPageComment on Comment {
       id
       postedBy {
@@ -49,7 +49,7 @@ CommentsPage.fragments = {
 };
 ```
 
-We put the fragment on `CommentsPage.fragments.comment` by convention, and use the familiar `gql` helper to create it.
+We put the fragment on `CommentsPage.fragments.comment` by convention.
 
 When it's time to embed the fragment in a query, we simply use the `...Name` syntax in our GraphQL, and pass the fragment object into our `graphql` HOC:
 
